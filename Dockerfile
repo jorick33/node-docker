@@ -4,7 +4,7 @@ FROM tezos/tezos:master
 
 USER root
 RUN \
-	apk add --no-cache --virtual .gyp python3 make g++ groff less py-pip curl jq && \
+	apk add --virtual .gyp python3 make g++ groff less py-pip curl jq && \
 	pip install awscli && \
 	apk --purge -v del py-pip && \
 	rm /var/cache/apk/*
