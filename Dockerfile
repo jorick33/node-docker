@@ -4,7 +4,7 @@ FROM tezos/tezos:master
 
 USER root
 RUN \
-	apk -Uuv add groff less python3 py-pip curl jq && \
+	apk -Uuv add groff less python3 py-pip curl jq py3-six py3-urllib3 py3-colorama && \
 	pip install awscli && \
 	apk --purge -v del py-pip && \
 	rm /var/cache/apk/*
