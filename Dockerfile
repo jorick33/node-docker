@@ -3,6 +3,7 @@ FROM tezos/tezos:master
 # Install AWS CLI
 
 USER root
+
 RUN \
 	apk -Uuv add groff less python3 py-pip curl jq py3-six py3-urllib3 py3-colorama && \
 	pip install awscli && \
