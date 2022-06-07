@@ -10,14 +10,13 @@ init_node() {
 		--connections=$connections \
 		--network=$network \
 		--history-mode full \
-        --force-history-mode-switch \
 		--cors-origin='*' \
 		--cors-header 'Origin, X-Requested-With, Content-Type, Accept, Range'
 	cat /home/tezos/.tezos-node/config.json
 }
 
 start_node() {
-	tezos-node run
+	tezos-node run --force-history-mode-switch
     if [ $? -ne 0 ]
 	then
     	echo "Node failed to start; exiting."
