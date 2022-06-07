@@ -16,7 +16,7 @@ init_node() {
 }
 
 start_node() {
-	tezos-node run --force-history-mode-switch
+	tezos-node run --force-history-mode-switch --rpc-addr 0.0.0.0:8732 --allow-all-rpc 0.0.0.0:8732
     if [ $? -ne 0 ]
 	then
     	echo "Node failed to start; exiting."
